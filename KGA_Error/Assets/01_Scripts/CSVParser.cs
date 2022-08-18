@@ -6,21 +6,25 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using UnityEngine;
-public class ScriptData // 실제 데이터와 이름이 같아야한다.
+
+public class DataTable // 실제 데이터와 이름이 같아야한다.
 {
-    public string phase { get; set; }
-    public int index { get; set; } 
-    public string script { get; set; }
+    public int Index { get; set; }
+    public string Script { get; set; }
+    public string B1 { get; set; }
+    public string B2 { get; set; }
+    public string Image { get; set; }
+    public string BGM { get; set; }
 }
-public class CSVParser : MonoBehaviour
+public class CSVParser : SingletonBehaviour<CSVParser>
 {
-    private void Start()
+    private Dictionary<int, DataTable> scriptTable = new Dictionary<int, DataTable>();
+    private void Awake()
     {
         // 1. 리소스 폴더에서 csv 로드
-        TextAsset scriptTextAsset = Resources.Load<TextAsset>("CSV/Error - Script"); 
+        TextAsset scriptTextAsset = Resources.Load<TextAsset>("CSV/Error - DataTable");
 
-        // 
-        //CsvReader의 두번째 매개변수인 Configuration에 들어갈 매개변수
+        // 2. csv파일 설정 - CsvReader의 매개변수 Configuration에 들어갈 변수
         CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
             Delimiter = "|", // 컬럼설정
@@ -32,15 +36,23 @@ public class CSVParser : MonoBehaviour
         {
             using (CsvReader csv = new CsvReader(cswString, config))
             {
-                IEnumerable<ScriptData> records = csv.GetRecords<ScriptData>();
-                foreach (ScriptData record in records)
+                IEnumerable<DataTable> records = csv.GetRecords<DataTable>();
+                foreach (DataTable record in records)
                 {
-                    Debug.Log($"{record.phase} : {record.index} : {record.script}");
+                    if (false == scriptTable.ContainsKey(record.Index))
+                    {
+                        scriptTable[record.Index] = record;
+
+                        // HACK : index는 1부터 시작하기에 0번 요소를 빈 값으로 채움
+                        scriptTable[record.Index] = null;
+                    }
+                    scriptTable[record.Index] = record;
                 }
             }
         }
-        // cswString.Dispose(); // 파일을 열었으면 늘 파일을 닫아줘야함
-        // csv.Dispose();
-        // 근데 이걸 빼먹을 수 있기 때문에 자동으로 Dispose를 호출해주는 using구문을 사용한다.
+    }
+    public DataTable GetScriptData(int _index)
+    {
+        return scriptTable[_index];
     }
 }
