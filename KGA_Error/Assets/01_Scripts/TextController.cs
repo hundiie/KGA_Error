@@ -34,11 +34,6 @@ public class TextController : MonoBehaviour
     private void Start()
     {
         // Phase = SceneManager.GetActiveScene().name;
-
-
-
-
-
         Script = CSVParser.Instance.GetScriptData(Index).Script;
         textMesh.text = Script;
     }

@@ -22,7 +22,7 @@ public class CSVParser : SingletonBehaviour<CSVParser>
     private void Awake()
     {
         // 1. 리소스 폴더에서 csv 로드
-        TextAsset scriptTextAsset = Resources.Load<TextAsset>("CSV/Error - DataTable");
+        TextAsset scriptTextAsset = Resources.Load<TextAsset>("CSV/DataTable");
 
         // 2. csv파일 설정 - CsvReader의 매개변수 Configuration에 들어갈 변수
         CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
