@@ -247,7 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89d59fa9eb624f408b1870d96efa0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase: 
   Index: 1004
   Script: 
 --- !u!1 &250786250
@@ -501,14 +500,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2683878417780975415, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2683878417780975415, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
-      propertyPath: turnSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2683878417780975416, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -527,6 +518,7 @@ GameObject:
   - component: {fileID: 788185841}
   - component: {fileID: 788185840}
   - component: {fileID: 788185839}
+  - component: {fileID: 788185843}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Finish
@@ -542,10 +534,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788185838}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &788185840
 MeshRenderer:
@@ -612,6 +604,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788185843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788185838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf25a39ac6ecb694cbf3cbf08cfa3d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823666946
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89d59fa9eb624f408b1870d96efa0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase: 
   Index: 1005
   Script: 
 --- !u!1 &854254630
@@ -1312,7 +1315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89d59fa9eb624f408b1870d96efa0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase: 
   Index: 1003
   Script: 
 --- !u!1 &1964964057
@@ -1439,7 +1441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89d59fa9eb624f408b1870d96efa0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase: 
   Index: 1001
   Script: 
 --- !u!1 &2057704642
@@ -1566,6 +1567,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89d59fa9eb624f408b1870d96efa0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase: 
   Index: 1002
   Script: 

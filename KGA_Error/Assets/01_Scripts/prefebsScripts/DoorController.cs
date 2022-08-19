@@ -7,22 +7,15 @@ public class DoorController : MonoBehaviour
     private Animator doorAnim;
     private bool isFindPlayer;
     private float DoorAnimBlend;
-    private Transform doorTransform;
-    private Vector3 Destination = new Vector3(-1.4f, 0, 0);
-    private void Awake()
-    {
-    }
     private void Start()
     {
         isFindPlayer = false;
         doorAnim = GetComponentInChildren<Animator>();
-        doorTransform = GetComponent<Transform>();
     }
     private void Update()
     {
         if (isFindPlayer)
-        {
-            
+        {            
             DoorAnimBlend += Time.deltaTime;
             if(DoorAnimBlend >= 1)
             {

@@ -743,6 +743,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2683878419311527226, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9990483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683878419311527226, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.043619405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683878419311527226, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078a01875ff5c654a9ba461d1d6c2df2, type: 3}
 --- !u!1001 &4279680967411932908
