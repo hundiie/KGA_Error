@@ -23,9 +23,11 @@ public class TextController : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     private TextMesh textMesh;
-    // public string Phase;
+
     public int Index;
+    public int Phase;
     public string Script;
+
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -33,10 +35,12 @@ public class TextController : MonoBehaviour
     }
     private void Start()
     {
-        // Phase = SceneManager.GetActiveScene().name;
-        Script = CSVParser.Instance.GetCsvData(Index).Script;
+        Script = CSVParser.Instance.GetCsvData(Index).Script; // CSV에서 스크립트 가져옴
+        Phase = Index / 1000;
         textMesh.text = Script;
     }
+
+    // 가까이 가면 나타나는 텍스트
     void OnTriggerEnter(Collider _other)
     {
         meshRenderer.enabled = true;

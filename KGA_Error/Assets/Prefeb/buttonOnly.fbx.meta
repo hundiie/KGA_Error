@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 8380974f7f560b84ba920a2d6e05e2cb
+guid: 36521fd8f8b27264cb4c6e463d530b1d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color_C01
-    second: {fileID: 2100000, guid: 6abcf48e9c4dd434990a63ef99e7bb35, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color_M05
-    second: {fileID: 2100000, guid: 0bca19ca83543a74b95dcda46c06b7c6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 0.1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637963410045919559
-    m_Hash: 3979996139
+      ticks: 637963781927900489
+    m_Hash: 3693497500
   m_LockFileStatus:
     m_FilePath: C:/KGA_Error/KGA_Error/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637965681003054359
-    m_Hash: 1344799166
+      ticks: 637963783559476635
+    m_Hash: 1761253017
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -3093,11 +3093,13 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     compatible:
     - 1.4.0
     - 1.4.1
     - 1.4.2
-    verified: 1.4.2
+    - 1.4.3
+    verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
@@ -3154,9 +3156,18 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 0.1.0-preview.4
+    - 0.1.0-preview.8
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
     - 1.0.3
+    - 2.0.0
+    - 2.0.1
     compatible:
     - 1.0.3
+    - 2.0.0
+    - 2.0.1
     verified: 1.0.3
   dependencies: []
   resolvedDependencies: []
@@ -3170,12 +3181,12 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637300096300000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+    url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
     revision: 473664ccba1496294b741cf169740a5d54b3d0b6
     path: 
   unityLifecycle:

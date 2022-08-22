@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class PlayerInput : MonoBehaviour
 {
     private float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
+
     public float turnSpeed = 3f; // 마우스 회전 속도
     public float moveSpeed = 2f; // 이동 속도
-    public bool IsPush = false;
+                                 // public bool IsPush = false;
+    public Transform CameraTransform;
+
     void Update()
     {
         MouseRotation();
         KeyboardMove();
-        Cilck();
+        Raycast();
     }
+
+    /// <summary>
+    /// 마우스 회전으로 시야변경
+    /// </summary>
     void MouseRotation()
     {
         float yRotateSize = Input.GetAxis("Mouse X") * turnSpeed;
@@ -23,6 +32,10 @@ public class PlayerInput : MonoBehaviour
 
         transform.eulerAngles = new Vector3(xRotate, yRotate, 0);
     }
+
+    /// <summary>
+    /// 이동과 이동속도
+    /// </summary>
     void KeyboardMove()
     {
         Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
@@ -38,15 +51,27 @@ public class PlayerInput : MonoBehaviour
             moveSpeed /= 3f;
         }
     }
-    void Cilck()
+
+    /// <summary>
+    /// 화면 가운데에 Ray쏘기
+    /// </summary>
+    void Raycast()
     {
-        if (Input.GetMouseButton(0))
+        RaycastHit hit; // 충돌정보
+        float maxDistance = 8f; // 검사 최대 거리
+
+        Debug.DrawRay(CameraTransform.position, CameraTransform.forward * maxDistance, Color.blue); // 레이쏘기
+
+        if (Physics.Raycast(CameraTransform.position, CameraTransform.forward, out hit, maxDistance))
         {
-            IsPush = true;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            IsPush = false;
+            if (hit.transform.tag == "Button") // 버튼 감지하면
+            {
+                if (Input.GetMouseButton(0)) // 클릭하면
+                {
+                    hit.transform.GetComponentInParent<Button>().IsPush = true; // 눌렀다고 알려주기
+                }
+                hit.transform.GetComponentInParent<Button>()?.ButtonTextEnable(); // 버튼텍스트 출력
+            }
         }
     }
 }
