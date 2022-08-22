@@ -60,12 +60,13 @@ public class Button : MonoBehaviour
         if (IsPush == true)
         {
             buttonAmim.SetFloat("Blend", buttonBlend);
-            yield return new WaitForSeconds(1f);
-            buttonBlend = 0f; // 블랜드값 초기화
             if (buttonController.ButtonState == 0)
             {
                 buttonController.checkingText.enabled = true; // 1초뒤에 checking텍스트 노출
             }
+            yield return new WaitForSeconds(4f);
+            buttonBlend = 0f; // 블랜드값 초기화
+            GameManager.Instance.CurrentPhase++; // 씬넘어감
         }
     }
 
