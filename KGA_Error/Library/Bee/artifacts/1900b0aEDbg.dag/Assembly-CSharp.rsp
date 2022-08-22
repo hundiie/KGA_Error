@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/01_Scripts/CSVParser.cs"
 "Assets/01_Scripts/GameManager.cs"
+"Assets/01_Scripts/Image.cs"
 "Assets/01_Scripts/Player/PlayerControl.cs"
 "Assets/01_Scripts/Player/PlayerInput.cs"
 "Assets/01_Scripts/prefebsScripts/Button.cs"
