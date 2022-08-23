@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 7365632355339848489}
   - component: {fileID: 7221091525275227710}
   - component: {fileID: 4302780500001427962}
+  - component: {fileID: 24918461253943282}
   m_Layer: 0
   m_Name: ButtonMesh
   m_TagString: Button
@@ -292,6 +293,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &24918461253943282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283192242501151669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f92d2bdc7684edb498b93b4f9c633721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonState: 0
+  IsPush: 0
+  ButtonText: 
 --- !u!1 &8666260168932927589
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8290965396088779487}
-  - component: {fileID: 2437321771490625993}
+  - component: {fileID: 4632017512393441021}
   m_Layer: 0
   m_Name: ButtonOnly
   m_TagString: Untagged
@@ -325,7 +341,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
---- !u!114 &2437321771490625993
+--- !u!114 &4632017512393441021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,8 +350,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8666260168932927589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92d2bdc7684edb498b93b4f9c633721, type: 3}
+  m_Script: {fileID: 11500000, guid: f5fdfa45926a8ea4da61e5ce317d6357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPlayer: {fileID: 0}
   checkingText: {fileID: 0}
-  ButtonText: {fileID: 7917647948016154820}

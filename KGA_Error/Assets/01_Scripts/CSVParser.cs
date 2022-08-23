@@ -11,6 +11,7 @@ public class DataTable // 실제 데이터와 이름이 같아야한다.
 {
     public int Index { get; set; }
     public string Script { get; set; }
+    public string DoorName { get; set; }
     public string B1 { get; set; }
     public string B2 { get; set; }
     public string Image { get; set; }
@@ -51,8 +52,39 @@ public class CSVParser : SingletonBehaviour<CSVParser>
             }
         }
     }
-    public DataTable GetCsvData(int _index) // 인덱스로 원하는 데이터를 찾는다.
+    private DataTable GetCsvData(int _index) // 인덱스로 원하는 데이터를 찾는다.
     {
         return dataTable[_index];
+    }
+
+    public string GetCsvScript(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).Script;
+    }
+    public string GetCsvDoorName(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).DoorName;
+    }
+    public string GetCsvB1(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).B1;
+    }
+    public string GetCsvB2(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).B2;
+    }
+    public string GetCsvImage(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).Image;
+    }
+    public string GetCsvBGM(int _scene, int _number)
+    {
+        int _index = _scene * 1000 + _number;
+        return GetCsvData(_index).BGM;
     }
 }

@@ -29,10 +29,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1089744893862542034}
-  - {fileID: 348342327328858592}
-  - {fileID: 1508603460299169194}
   - {fileID: 1203386607623486128}
+  - {fileID: 1508603460299169194}
+  - {fileID: 348342327328858592}
+  - {fileID: 1089744893862542034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fdfa45926a8ea4da61e5ce317d6357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPush: 0
-  ButtonState: 1
+  roomInfo: 0
+  buttonPlayer: {fileID: 0}
+  checkingText: {fileID: 0}
 --- !u!1001 &242973366063334923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8380974f7f560b84ba920a2d6e05e2cb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8380974f7f560b84ba920a2d6e05e2cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -121,7 +122,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cd76fdc5c06c3d340bcae3e21ba21616, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd76fdc5c06c3d340bcae3e21ba21616, type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,9 +182,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3594443375589357917}
     m_Modifications:
+    - target: {fileID: 24918461253943282, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: ButtonState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -227,10 +232,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666260168932927589, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_Name
-      value: ButtonOnly (1)
+      value: ButtonOnly_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4632017512393441021, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+--- !u!114 &1034990619852484779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7917647948016154820, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+  m_PrefabInstance: {fileID: 7186659408346171503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1203386607623486128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
@@ -243,9 +260,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3594443375589357917}
     m_Modifications:
+    - target: {fileID: 24918461253943282, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: ButtonState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437321771490625993, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: ButtonTMP
+      value: 
+      objectReference: {fileID: 1034990619852484779}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,9 +314,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666260168932927589, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_Name
-      value: ButtonOnly
+      value: ButtonOnly_R
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4632017512393441021, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
 --- !u!4 &1508603460299169194 stripped
 Transform:

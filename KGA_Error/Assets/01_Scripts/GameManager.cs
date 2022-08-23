@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
-    public int CurrentPhase;
-    void Start()
+    public int CurrentScene { get; set; }
+    private void Awake()
     {
-        CurrentPhase = 0;
+        CurrentScene = 1;
     }
-    void Update()
-    {
-    }
-    
 }

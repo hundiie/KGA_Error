@@ -50,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPlayer: {fileID: 0}
   checkingText: {fileID: 2597680419750606986}
-  ButtonState: 0
 --- !u!1 &6472000356504219760
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +353,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1312949451355645978}
     m_Modifications:
+    - target: {fileID: 2437321771490625993, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: ButtonTMP
+      value: 
+      objectReference: {fileID: 1959486263433535949}
+    - target: {fileID: 4632017512393441021, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: checkingText
+      value: 
+      objectReference: {fileID: 2597680419750606986}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -402,10 +409,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonOnly
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2437321771490625993, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
 --- !u!4 &423111443240561622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
   m_PrefabInstance: {fileID: 8561444613706799369}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1959486263433535949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7917647948016154820, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+  m_PrefabInstance: {fileID: 8561444613706799369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

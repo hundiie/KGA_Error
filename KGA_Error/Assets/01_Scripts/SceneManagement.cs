@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManagement : MonoBehaviour
+public class SceneManagement : SingletonBehaviour<SceneManagement>
 {
     private int sceneNumber;
-    void Update()
+    public void ChangeScene()
     {
-        sceneNumber = GameManager.Instance.CurrentPhase;
+        sceneNumber = GameManager.Instance.CurrentScene;
         switch (sceneNumber)
         {
             case 0:
