@@ -9,14 +9,6 @@ public class SceneManagement : SingletonBehaviour<SceneManagement>
     public void ChangeScene()
     {
         sceneNumber = GameManager.Instance.CurrentScene;
-        switch (sceneNumber)
-        {
-            case 0:
-                SceneManager.LoadScene("Intro");
-                break;
-            case 1:
-                SceneManager.LoadScene("Phase1");
-                break;
-        }
+        SceneManager.LoadScene(sceneNumber);
     }
 }

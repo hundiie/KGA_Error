@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Button : MonoBehaviour
 {
-    public enum ButtonInfo // 버튼 상태 관련(아직 안썼음)
+    public enum ButtonInfo  // 버튼 종류
     {
         OneButton,
         TwoButton_L,
@@ -14,55 +14,61 @@ public class Button : MonoBehaviour
 
     public bool IsPush = false; // 눌렸는지 체크
 
+    private RoomController roomController;
     private ButtonController buttonController;
+    private AudioSource buttonPlayer;   // 버튼 누르면 나는 소리
+
     private Animator buttonAmim;    // 버튼 누르는 애니메이션
-    private TextMeshPro ButtonTMP;   // 버튼 바로 위에 뜨는 텍스트
-    private string ButtonText;   // 버튼 바로 위에 뜨는 텍스트
+    private string ButtonText;      // CSV에서 가져오는 텍스트
+    private TextMeshPro ButtonTMP;  // 버튼 바로 위에 뜨는 텍스트
 
     private float buttonBlend;      // 애니메이션 블랜드값
     private float timer;
 
     private void Awake()
     {
+        roomController = GetComponentInParent<RoomController>();
         buttonController = GetComponentInParent<ButtonController>();
+        buttonPlayer = GetComponentInParent<AudioSource>();
         buttonAmim = GetComponent<Animator>();
         ButtonTMP = GetComponentInChildren<TextMeshPro>();
     }
+
     private void Start()
     {
-
+        // 버튼 텍스트 파싱
         switch ((int)ButtonState)
         {
+            case 0: // 한개버튼
+                ButtonText = CSVParser.Instance.GetCsvOneButton((int)roomController.roomInfo);
+                buttonController.checkingText.enabled = false;
+                break;
             case 1: // 왼쪽버튼
-                ButtonText = CSVParser.Instance.GetCsvB1(GameManager.Instance.CurrentScene, (int)buttonController.roomInfo);
+                ButtonText = CSVParser.Instance.GetCsvTwoButton_L((int)roomController.roomInfo);
                 break;
             case 2: // 오른쪽 버튼
-                ButtonText = CSVParser.Instance.GetCsvB2(GameManager.Instance.CurrentScene, (int)buttonController.roomInfo);
+                ButtonText = CSVParser.Instance.GetCsvTwoButton_R((int)roomController.roomInfo);
                 break;
         }
         ButtonTMP.text = ButtonText;
-        Debug.Log(gameObject.name + $" - buttonController.roomInfo : {buttonController.roomInfo}, ButtonState : {ButtonState} ButtonText: {ButtonText}, currentScene : {GameManager.Instance.CurrentScene}");
-
-        if (ButtonState == 0)
-        {
-            buttonController.checkingText.enabled = false;
-        }
         ButtonTMP.enabled = false;
+
         buttonBlend = 0f;
     }
     private void Update()
     {
-        if (IsPush)
+        if (IsPush && buttonController.doNotPush == false)
         {
+            buttonPlayer.Play(); // 누르는 소리
             StartCoroutine("PushDown");
 
-            buttonBlend += Time.deltaTime; // 블랜드값 0 -> 1
-            if (buttonBlend >= 1)
+            while (buttonBlend <= 1) // 블랜드값 0 -> 1
             {
-                buttonBlend = 1f;
-                IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
+                buttonBlend += Time.deltaTime;
             }
         }
+
+        // Player ray관련
         timer += Time.deltaTime;
         if (timer >= 0.5f)
         {
@@ -77,25 +83,26 @@ public class Button : MonoBehaviour
     /// <returns>1초</returns>
     private IEnumerator PushDown()
     {
-        if (IsPush == true)
+        buttonAmim.SetFloat("Blend", buttonBlend);
+
+        if (ButtonState == 0)   // 버튼 하나일 때만 checking텍스트 노출
         {
-            buttonAmim.SetFloat("Blend", buttonBlend);
-            if (ButtonState == 0)
-            {
-                buttonController.checkingText.enabled = true; // checking텍스트 노출
-            }
+            buttonController.checkingText.enabled = true;
+        }
+
+        if (buttonBlend >= 1)
+        {
+            buttonController.doNotPush = true;
+            buttonBlend = 0f;
+            IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
             yield return new WaitForSeconds(4f);
-            buttonBlend = 0f; // 블랜드값 초기화
             if (ButtonState == 0)
             {
-                Debug.Log($"currentScene : {GameManager.Instance.CurrentScene}");
                 GameManager.Instance.CurrentScene++; // 씬넘어감
-                Debug.Log($"currentScene : {GameManager.Instance.CurrentScene}");
                 SceneManagement.Instance.ChangeScene();
             }
         }
     }
-
     public void ButtonTextEnable()
     {
         ButtonTMP.enabled = true;

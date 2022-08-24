@@ -1,37 +1,98 @@
-Index|Script|DoorName|B1|B2|Image|BGM
-0001|Welcome|||||intro.mp3
+Index|Script|DoorName|OneButton|TwoButton_L|TwoButton_R|Image|BGM|Turn1|Turn2|Turn3|Turn4
+0000|||Push||||0||||
+0001|Welcome||||||||||
 0002|"Thanks for purchasing our newly
-devleoped COOL DIVE game"|||||intro.mp4
-0003|COOL DIVE game is very cool game|||||intro.mp5
-0004|and super amazing game|||||intro.mp6
+devleoped COOL DIVE game"||||||||||
+0003|COOL DIVE game is very cool game||||||||||
+0004|and super amazing game||||||||||
 0005|"But you need to realize that we
 have lock down system to prevent
-from game addiction"|||||intro.mp7
+from game addiction"||||||||||
 0006|"We do not reccommend playing for
 longer than 3 hours. It makes you
-feel very dangerous."|||||intro.mp8
+feel very dangerous."||||||||||
 0007|"With that, we thank you again
-And welcom COOL DIVE!"|||||intro.mp9
-1001|Is This face happy or sad?|FaceTest|Happy|Sad|0|phase
-1002|How does this music make you feel?|MusicTest|Happy|Sad|1|happySound
+And welcom COOL DIVE!"||||||||||
+1000|"Consciousness-Transmission
+HumanTest Protocol (HTP0.13a)
+
+
+Test Log 2
+<Anomalies detected during recursive cerebral analysis>
+<99.964% Human>
+
+Please try again
+
+
+FullDive LTD"||||||1|1|2|3|4
+1001|Is This face happy or sad?|FaceTest||Happy|Sad|0|||||
+1002|How does this music make you feel?|MusicTest||Happy|Sad|1|2||||
 1003|"A father of three passed away in traffic accident.
-How does this make you feel?"|MoralTest|Happy|Sad|2|
-2001|Is This face happy or sad?|MusicTest|Happy|Sad|3|
-2002|How does this music make you feel?|MusicTest|Happy|Sad|1|happySound
+How does this make you feel?"|MoralTest||Happy|Sad|2|||||
+1004||End|check||||||||
+2000|"Consciousness-Transmission
+HumanTest Protocol (HTP0.13a)
+
+
+Test Log 113
+<Anomalies detected during recursive cerebral analysis>
+<99.542% Human>
+
+Please try again
+
+
+FullDive LTD"||||||1|1|2|3|4
+2001|Is This face happy or sad?|MusicTest||Happy|Sad|3|||||
+2002|How does this music make you feel?|MusicTest||Happy|Sad|1|2||||
 2003|"A father of three passed away in traffic accident.
-How does this make you feel?"|MoralTest|Sad|Happy|2|
-3001|Is This face sad?|Test|Happy|Happy|3|
-3002|How does this music make you feel?|MusicTest|Happy|Sad|1|weirdSound
+How does this make you feel?"|MoralTest||Sad|Happy|2|||||
+2004||End|check||||||||
+3000|"Consciousness-Transmission
+HumanTest Protocol (HTP0.13a)
+
+
+test_Log 1382
+<Anomalies detected during recursive cerebral analysis>
+<99.311% Human>
+
+Please try again
+
+
+LTD"||||||3||||
+3001|Is This face sad?|Test||Happy|Happy|3|||||
+3002|How does this music make you feel?|MusicTest||Happy|Sad|1|4||||
 3003|"A father of three burned to death.
-How does this make you feel?"|MoralTest|Sad|Happy|2|
-4001|How does this music make you feel?|FaceTest|||1|
-4002|How does this music make you feel?||FaceButton2.execute;|commitWrongAnswer();|2|BeepSound
-4003||||||
-5001|well mayby the coding AI can't fully comprehend what a human is|FaceRoom|?|?|4|Dduzzzzz
-5002|____________________________________________________|MusicRoom|||4|
-5003|he's in a better Place than you|Exit|||5|
+How does this make you feel?"|MoralTest||Sad|Happy|2|||||
+3004||Exit|Exit||||||||
+4000|"Human Consciousness
+
+
+test 3754
+<98.297% Human>
+
+Please try again
+
+Please try again
+Please try again
+Please try again
+Please try again
+Please try again"||||||3|1|3|2|4
+4001|How does this music make you feel?|FaceTest||L|R|1|||||
+4002|How does this music make you feel?|Music||FaceButton2.execute;|commitWrongAnswer();|2|5||||
+4003||room||error|error|6|||||
+4004||Home|home||||||||
+5000|"test7871
+<92.177% Human>
+try again"||||||6|3|2|1|4
+5001|well mayby the coding AI can't fully comprehend what a human is|FaceRoom||?|?|4|Dduzzzzz||||
+5002|____________________________________________________|MusicRoom||happy|happy|4|||||
+5003|he's in a better Place than you|Exit||^|^|5|||||
+5004|||||||||||
+6000|"10908
+<cranial damage>"||||||6|1|3|4|2
 6001|"help
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help|||0|
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help||sos|sos|0|||||
 6002|"help
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help|||0|
-6003|when are you coming home?|help|help|help|6|
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help||kill|kill|0|||||
+6003|when are you coming home?|help||help|help|6|||||
+6004||:)|?||||||||

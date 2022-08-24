@@ -12,10 +12,15 @@ public class DataTable // 실제 데이터와 이름이 같아야한다.
     public int Index { get; set; }
     public string Script { get; set; }
     public string DoorName { get; set; }
-    public string B1 { get; set; }
-    public string B2 { get; set; }
+    public string TwoButton_L { get; set; }
+    public string OneButton { get; set; }
+    public string TwoButton_R { get; set; }
     public string Image { get; set; }
     public string BGM { get; set; }
+    public string Turn1 { get; set; }
+    public string Turn2 { get; set; }
+    public string Turn3 { get; set; }
+    public string Turn4 { get; set; }
 }
 public class CSVParser : SingletonBehaviour<CSVParser>
 {
@@ -45,7 +50,7 @@ public class CSVParser : SingletonBehaviour<CSVParser>
                         dataTable[record.Index] = record;
 
                         // HACK : index는 1부터 시작하기에 0번 요소를 빈 값으로 채움
-                        dataTable[record.Index] = null;
+                        // dataTable[record.Index] = null;
                     }
                     dataTable[record.Index] = record;
                 }
@@ -57,34 +62,54 @@ public class CSVParser : SingletonBehaviour<CSVParser>
         return dataTable[_index];
     }
 
-    public string GetCsvScript(int _scene, int _number)
+    public string GetCsvScript(int _number)
     {
-        int _index = _scene * 1000 + _number;
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).Script;
     }
-    public string GetCsvDoorName(int _scene, int _number)
+    public string GetCsvDoorName(int _number)
     {
-        int _index = _scene * 1000 + _number;
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).DoorName;
     }
-    public string GetCsvB1(int _scene, int _number)
+    public string GetCsvOneButton(int _number)
     {
-        int _index = _scene * 1000 + _number;
-        return GetCsvData(_index).B1;
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
+        return GetCsvData(_index).OneButton;
     }
-    public string GetCsvB2(int _scene, int _number)
+    public string GetCsvTwoButton_L(int _number)
     {
-        int _index = _scene * 1000 + _number;
-        return GetCsvData(_index).B2;
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
+        return GetCsvData(_index).TwoButton_L;
     }
-    public string GetCsvImage(int _scene, int _number)
+    public string GetCsvTwoButton_R(int _number)
     {
-        int _index = _scene * 1000 + _number;
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
+        return GetCsvData(_index).TwoButton_R;
+    }
+    public string GetCsvImage(int _number)
+    {
+        int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).Image;
     }
-    public string GetCsvBGM(int _scene, int _number)
+    public int GetCsvBGM()
     {
-        int _index = _scene * 1000 + _number;
-        return GetCsvData(_index).BGM;
+        int _index = GameManager.Instance.CurrentScene * 1000;
+        int audioIndex = Convert.ToInt32(GetCsvData(_index).BGM);
+        return audioIndex;
     }
+    public int[] GetCsvTurn()
+    {
+        int _index = GameManager.Instance.CurrentScene * 1000;
+
+        int[] myTurn = { 
+            Convert.ToInt32(GetCsvData(_index).Turn1),
+            Convert.ToInt32(GetCsvData(_index).Turn2),
+            Convert.ToInt32(GetCsvData(_index).Turn3),
+            Convert.ToInt32(GetCsvData(_index).Turn4)
+        };
+        
+        return myTurn;
+    }
+
 }
