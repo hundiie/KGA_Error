@@ -90,13 +90,13 @@ public class CSVParser : SingletonBehaviour<CSVParser>
     public int GetCsvImage(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
-        int imageIndex = Convert.ToInt32(GetCsvData(_index).Image);
+        int imageIndex = Int32.Parse(GetCsvData(_index).Image);
         return imageIndex;
     }
     public int GetCsvBGM(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
-        int audioIndex = Convert.ToInt32(GetCsvData(_index).BGM);
+        int audioIndex = Int32.Parse(GetCsvData(_index).BGM);
         return audioIndex;
     }
     public int[] GetCsvTurn()
@@ -111,5 +111,4 @@ public class CSVParser : SingletonBehaviour<CSVParser>
         };        
         return myTurn;
     }
-
 }

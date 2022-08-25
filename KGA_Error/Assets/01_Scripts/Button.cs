@@ -100,6 +100,7 @@ public class Button : MonoBehaviour
             else
             {
                 GameManager.Instance.TurnIndex++;
+                roomController.RoomTurnChange();
             }
             StopCoroutine("PushDown");
         }

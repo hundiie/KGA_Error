@@ -10,8 +10,9 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void Awake()
     {
-        CurrentScene = 9;
+        CurrentScene = 0;
         TurnIndex = 0;
+        ChangeScene();
     }
     public void ChangeScene()
     {

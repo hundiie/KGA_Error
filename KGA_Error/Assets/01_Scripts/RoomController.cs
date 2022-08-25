@@ -24,8 +24,7 @@ public class RoomController : MonoBehaviour
         Turn = CSVParser.Instance.GetCsvTurn();
         PlayerInRoom = false;
     }
-
-    void Update()
+    public void RoomTurnChange()
     {
         if (Turn[GameManager.Instance.TurnIndex] == (int)roomInfo)
         {
