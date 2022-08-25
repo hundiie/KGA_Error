@@ -360,6 +360,7 @@
 "Assets/01_Scripts/QuitControl.cs"
 "Assets/01_Scripts/RoomController.cs"
 "Assets/01_Scripts/ScriptController.cs"
+"Assets/01_Scripts/UIController.cs"
 "Assets/01_Scripts/Utill/CSVParser.cs"
 "Assets/01_Scripts/Utill/GameManager.cs"
 "Assets/01_Scripts/Utill/PlayerInput.cs"

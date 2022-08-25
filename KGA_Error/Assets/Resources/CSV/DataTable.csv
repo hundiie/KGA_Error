@@ -1,10 +1,10 @@
 Index|Script|DoorName|OneButton|TwoButton_L|TwoButton_R|Image|BGM|Turn1|Turn2|Turn3|Turn4
-0000|||Push||||0||||
+0000|||||||0|4|3|2|1
 0001|Welcome||||||||||
 0002|"Thanks for purchasing our newly
 devleoped COOL DIVE game"||||||||||
 0003|COOL DIVE game is very cool game||||||||||
-0004|and super amazing game||||||||||
+0004|and super amazing game||Push||||||||
 0005|"But you need to realize that we
 have lock down system to prevent
 from game addiction"||||||||||
@@ -58,7 +58,7 @@ test_Log 1382
 Please try again
 
 
-LTD"||||||3||||
+LTD"||||||3|3|1|2|4
 3001|Is This face sad?|Test||Happy|Happy|3|||||
 3002|How does this music make you feel?|MusicTest||Happy|Sad|1|4||||
 3003|"A father of three burned to death.
@@ -96,3 +96,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help||kill|kill|0|||||
 6003|when are you coming home?|help||help|help|6|||||
 6004||:)|?||||||||
+7000|||home||||6|3|4|1|2
+8000|||home||||6|3|4|1|2
+9000|||home||||6|3|4|1|2

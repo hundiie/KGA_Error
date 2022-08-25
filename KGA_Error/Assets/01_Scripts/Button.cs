@@ -57,12 +57,12 @@ public class Button : MonoBehaviour
     }
     private void Update()
     {
-        if (IsPush && buttonController.doNotPush == false)
+        if (IsPush)
         {
             buttonPlayer.Play(); // 누르는 소리
             StartCoroutine("PushDown");
-
-            buttonBlend += Time.deltaTime; // 블랜드값 0 -> 1
+            float blendSpeed = Time.deltaTime * 1.5f;
+            buttonBlend += blendSpeed; // 블랜드값 0 -> 1
         }
 
         // Player ray관련
@@ -80,24 +80,26 @@ public class Button : MonoBehaviour
     /// <returns>1초</returns>
     private IEnumerator PushDown()
     {
+        buttonController.doNotPush = true;
         buttonAmim.SetFloat("Blend", buttonBlend);
 
-        if (ButtonState == 0)   // 버튼 하나일 때만 checking텍스트 노출
-        {
-            buttonController.checkingText.enabled = true;
-        }
+        // 버튼 하나일 때만 checking텍스트 노출
+        if (ButtonState == 0) { buttonController.checkingText.enabled = true; }
 
         if (buttonBlend >= 1)
         {
-            yield return new WaitForSeconds(4f);
-            buttonBlend = 0f;
-            buttonController.doNotPush = true;
             IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
-            GameManager.Instance.TurnIndex++;
+            buttonBlend = 0f;
+
+            yield return new WaitForSeconds(3f);
             if (ButtonState == 0)
             {
                 GameManager.Instance.CurrentScene++; // 씬넘어감
                 GameManager.Instance.ChangeScene();
+            }
+            else
+            {
+                GameManager.Instance.TurnIndex++;
             }
             StopCoroutine("PushDown");
         }

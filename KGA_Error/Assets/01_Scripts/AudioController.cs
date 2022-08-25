@@ -21,18 +21,23 @@ public class AudioController : MonoBehaviour
         soundRoomIndex = CSVParser.Instance.GetCsvBGM(2);
         audioSource = GetComponent<AudioSource>();
 
-        PlaySound();
+        audioSource.Play();
     }
-    private void PlaySound()
+    private void Update()
     {
         if (SoundRoom.PlayerInRoom)
         {
+        //audioSource.Play();
             audioSource.clip = AudioList[soundRoomIndex];
         }
         else
         {
             audioSource.clip = AudioList[BGMIndex];
+        //audioSource.Play();
         }
-        audioSource.Play();
+        // PlaySound();
     }
+    //private void PlaySound()
+    //{
+    //}
 }

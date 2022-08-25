@@ -3,7 +3,22 @@ guid: 6ef59cdd117072d4b8d8731654565ba2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Auge1
+    second: {fileID: 2100000, guid: d8c0bfe95451f5349bfd59f0e413cad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_A04
+    second: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_B05
+    second: {fileID: 2100000, guid: f4c90ab36bd7d3441a0c06cecde4f024, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

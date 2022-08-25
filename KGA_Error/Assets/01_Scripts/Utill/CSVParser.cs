@@ -104,10 +104,10 @@ public class CSVParser : SingletonBehaviour<CSVParser>
         int _index = GameManager.Instance.CurrentScene * 1000;
 
         int[] myTurn = { 
-            Convert.ToInt32(GetCsvData(_index).Turn1),
-            Convert.ToInt32(GetCsvData(_index).Turn2),
-            Convert.ToInt32(GetCsvData(_index).Turn3),
-            Convert.ToInt32(GetCsvData(_index).Turn4)
+            Int32.Parse(GetCsvData(_index).Turn1),
+            Int32.Parse(GetCsvData(_index).Turn2),
+            Int32.Parse(GetCsvData(_index).Turn3),
+            Int32.Parse(GetCsvData(_index).Turn4)
         };        
         return myTurn;
     }

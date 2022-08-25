@@ -56,16 +56,14 @@ public class PlayerInput : MonoBehaviour
     void Raycast()
     {
         RaycastHit hit; // 충돌정보
-        float maxDistance = 15f; // 검사 최대 거리
-
-        // Debug.DrawRay(CameraTransform.position, CameraTransform.forward * maxDistance, Color.blue); // 레이쏘기
+        float maxDistance = 20f; // 검사 최대 거리
 
         if (Physics.Raycast(CameraTransform.position, CameraTransform.forward, out hit, maxDistance))
         {
             if (hit.transform.tag == "Button") // 버튼 감지하면
             {
                 hit.transform.GetComponent<Button>()?.ButtonTextEnable(); // 버튼텍스트 출력
-                if (Input.GetMouseButton(0)) // 클릭하면
+                if (Input.GetMouseButton(0) && !hit.transform.GetComponentInParent<ButtonController>().doNotPush) // 클릭하면
                 {
                     hit.transform.GetComponent<Button>().IsPush = true; // 눌렀다고 알려주기
                 }
