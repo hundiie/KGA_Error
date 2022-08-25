@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class AudioController : MonoBehaviour
+public class AudioController : SingletonBehaviour<AudioController>
 {
     public RoomController SoundRoom;
 
     public List<AudioClip> AudioList;
 
     private int BGMIndex; // CSV에서 담긴 숫자
-    private int soundRoomIndex; // CSV에서 담긴 숫자
     private AudioSource audioSource; // 파싱된 오디오 클립을 담을 오디오 소스
     void Start()
     {
@@ -18,26 +17,15 @@ public class AudioController : MonoBehaviour
         AudioList = Resources.LoadAll("Audio", typeof(AudioClip)).OfType<AudioClip>().ToList();
 
         BGMIndex = CSVParser.Instance.GetCsvBGM(0);
-        soundRoomIndex = CSVParser.Instance.GetCsvBGM(2);
         audioSource = GetComponent<AudioSource>();
 
+        audioSource.clip = AudioList[BGMIndex];
         audioSource.Play();
     }
-    private void Update()
+
+    public void PlaySound(int index, float Volum )
     {
-        if (SoundRoom.PlayerInRoom)
-        {
-        //audioSource.Play();
-            audioSource.clip = AudioList[soundRoomIndex];
-        }
-        else
-        {
-            audioSource.clip = AudioList[BGMIndex];
-        //audioSource.Play();
-        }
-        // PlaySound();
+        audioSource.volume = Volum;
+        audioSource.PlayOneShot(AudioList[index]);
     }
-    //private void PlaySound()
-    //{
-    //}
 }

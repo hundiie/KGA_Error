@@ -10,7 +10,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void Awake()
     {
-        CurrentScene = 3;
+        CurrentScene = 9;
         TurnIndex = 0;
     }
     public void ChangeScene()
@@ -20,6 +20,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         //{
         //    UIController.Instance.StartCoroutine("FadeInStart");
         //}
+        AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(0), 0.1f);
         SceneManager.LoadScene(CurrentScene);
     }
 }

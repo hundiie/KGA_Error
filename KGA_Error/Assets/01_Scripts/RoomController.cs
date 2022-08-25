@@ -7,7 +7,7 @@ public class RoomController : MonoBehaviour
     public enum RoomInfo
     {
         LOBBY = 0,
-        FACE  = 1,
+        FACE = 1,
         SOUND = 2,
         MORAL = 3,
         CHECK = 4
@@ -36,12 +36,24 @@ public class RoomController : MonoBehaviour
             MyRoomTurn = false;
         }
     }
-    void OnTriggerStay(Collider _other)
+    void OnTriggerEnter(Collider _other)
     {
-        if (_other.tag == "Player") { PlayerInRoom = true; }
+        if (_other.tag == "Player")
+        {
+            PlayerInRoom = true;
+            if (roomInfo == RoomInfo.SOUND)
+            {
+                AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(2), 0.1f);
+            }
+
+        }
     }
     void OnTriggerExit(Collider _other)
     {
-        if (_other.tag == "Player") { PlayerInRoom = false; }
+        if (_other.tag == "Player")
+        {
+            PlayerInRoom = false;
+            AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(0), 0.1f);
+        }
     }
 }
