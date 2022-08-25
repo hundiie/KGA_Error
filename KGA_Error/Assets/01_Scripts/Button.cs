@@ -62,10 +62,7 @@ public class Button : MonoBehaviour
             buttonPlayer.Play(); // 누르는 소리
             StartCoroutine("PushDown");
 
-            while (buttonBlend <= 1) // 블랜드값 0 -> 1
-            {
-                buttonBlend += Time.deltaTime;
-            }
+            buttonBlend += Time.deltaTime; // 블랜드값 0 -> 1
         }
 
         // Player ray관련
@@ -92,16 +89,17 @@ public class Button : MonoBehaviour
 
         if (buttonBlend >= 1)
         {
-            buttonController.doNotPush = true;
-            buttonBlend = 0f;
-            IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
-            roomController.TurnIndex++;
             yield return new WaitForSeconds(4f);
+            buttonBlend = 0f;
+            buttonController.doNotPush = true;
+            IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
+            GameManager.Instance.TurnIndex++;
             if (ButtonState == 0)
             {
                 GameManager.Instance.CurrentScene++; // 씬넘어감
                 GameManager.Instance.ChangeScene();
             }
+            StopCoroutine("PushDown");
         }
     }
     public void ButtonTextEnable()

@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : SingletonBehaviour<GameManager>
 {
     public int CurrentScene { get; set; }
+    public int TurnIndex;
+
     private void Awake()
     {
-        CurrentScene = 1;
+        CurrentScene = 3;
     }
     public void ChangeScene()
     {
         SceneManager.LoadScene(CurrentScene);
+        TurnIndex = 0;
+
     }
 }

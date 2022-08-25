@@ -16,20 +16,18 @@ public class RoomController : MonoBehaviour
 
     private int[] Turn;
 
-    public int TurnIndex;
     public bool MyRoomTurn;
     public bool PlayerInRoom;
 
     void Start()
     {
         Turn = CSVParser.Instance.GetCsvTurn();
-        TurnIndex = 0;
         PlayerInRoom = false;
     }
 
     void Update()
     {
-        if (Turn[TurnIndex] == (int)roomInfo)
+        if (Turn[GameManager.Instance.TurnIndex] == (int)roomInfo)
         {
             MyRoomTurn = true;
         }

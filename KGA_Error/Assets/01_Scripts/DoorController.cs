@@ -15,6 +15,7 @@ public class DoorController : MonoBehaviour
 
     private bool isFindPlayer;
     private bool doorLock;
+    private bool animFinish;
 
     private void Awake()
     {
@@ -34,18 +35,19 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
-        if(!roomController.PlayerInRoom && !roomController.MyRoomTurn)
+        if(!roomController.PlayerInRoom && !roomController.MyRoomTurn && animFinish)
         {
             doorLock = true;
+            doorTMP.enabled = false;
         }
         else
         {
             doorLock = false;
+            doorTMP.enabled = true;
         }
 
         if (!doorLock)
         {
-            doorTMP.enabled = true;
 
             if (isFindPlayer)
             {
@@ -58,7 +60,7 @@ public class DoorController : MonoBehaviour
                 DoorClose();
 
                 doorAnimBlend -= Time.deltaTime;
-                if (doorAnimBlend <= 0) { doorAnimBlend = 0f; }
+                if (doorAnimBlend <= 0) { doorAnimBlend = 0f; animFinish = true; }
             }
         }
     }
@@ -76,10 +78,10 @@ public class DoorController : MonoBehaviour
     // 문 열리는 애니메이션
     private void DoorOpen()
     {
-        if (doorAnimBlend <= 1) { doorAnim.SetFloat("Blend", doorAnimBlend); }
+        if (doorAnimBlend <= 1) { doorAnim.SetFloat("Blend", doorAnimBlend); animFinish = false; }
     }
     private void DoorClose()
     {
-        if (doorAnimBlend >= 0) { doorAnim.SetFloat("Blend", doorAnimBlend); }
+        if (doorAnimBlend >= 0) { doorAnim.SetFloat("Blend", doorAnimBlend); animFinish = false; }
     }
 }
