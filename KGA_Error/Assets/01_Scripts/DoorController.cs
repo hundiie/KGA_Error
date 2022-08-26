@@ -66,7 +66,7 @@ public class DoorController : MonoBehaviour
     }
 
     // 플레이어 감지
-    void OnTriggerStay(Collider _other)
+    void OnTriggerEnter(Collider _other)
     {
         if (_other.tag == "Player") { isFindPlayer = true; }
     }

@@ -1,5 +1,5 @@
 Index|Script|DoorName|OneButton|TwoButton_L|TwoButton_R|Image|BGM|Turn1|Turn2|Turn3|Turn4
-0000|||||||0|4|||
+0000|||||||0|0|0|0|0
 0001|Welcome||||||||||
 0002|"Thanks for purchasing our newly
 devleoped COOL DIVE game"||||||||||
@@ -85,28 +85,28 @@ Please try again"||||||3|1|3|2|4
 <92.177% Human>
 try again"||||||6|3|2|1|4
 5001|well mayby the coding AI can't fully comprehend what a human is|FaceRoom||?|?|4|||||
-5002|____________________________________________________|MusicRoom||happy|happy|4|||||
-5003|he's in a better Place than you|Exit||Yes|No|5|5||||
-5004|||||||||||
+5002|____________________________________________________|MusicRoom||happy|happy|4|5||||
+5003|he's in a better Place than you|Exit||Yes|No|5|||||
+5004||1@#$%6|GetOut||||||||
 6000|"10908
-<cranial damage>"||||||6|1|3|2|4
+<cranial damage>"||||||6|3|3|2|4
 6001|"help
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help||haha|hahahahah|0|||||
 6002|"help
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"|help||FaceButton2.execute;|commitWrongAnswer();|0|5||||
 6003|when are you coming home?|help||help|help|6|||||
-6004||:)|?||||||||
-7000|||home||||6|3|4||
+6004||GetOut|?||||||||
+7000|||||||5|3|0|0|0
 7001|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|damaged||damaged|damaged|0|||||
-7002|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|damaged||damaged|damaged|0|5||||
+7002|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|damaged||damaged|damaged|0|||||
 7003|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|damaged||damaged|damaged|6|||||
 7004||damaged|getout||||||||
-8000|||||||6|3|4||
+8000|||||||5|3|4|0|0
 8001|"Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); "|damaged||damaged|damaged|0|||||
 8002|"Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); "|damaged||damaged|damaged|0|5||||
 8003|"Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); Debug.Log(""Error""); "|damaged||damaged|damaged|6|||||
 8004||damaged|getout!!||||||||
-9000|||||||1|3|4||
+9000|||||||1|3|0|0|0
 9001|지친다…||||||||||
 9002|엄마가 이 게임 사지 말랬는데…||||||||||
 9003|엄마말 들을걸….||||||||||

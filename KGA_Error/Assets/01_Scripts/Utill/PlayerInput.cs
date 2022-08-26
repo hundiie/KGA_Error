@@ -6,8 +6,8 @@ public class PlayerInput : MonoBehaviour
 {
     private float xRotate = 0.0f; // 내부 사용할 X축 회전량은 별도 정의 ( 카메라 위 아래 방향 )
 
-    public float turnSpeed = 3f; // 마우스 회전 속도
-    public float moveSpeed = 2f; // 이동 속도
+    public float turnSpeed = 2.5f; // 마우스 회전 속도
+    public float moveSpeed = 3f; // 이동 속도
                                  // public bool IsPush = false;
     public Transform CameraTransform;
 
@@ -42,11 +42,11 @@ public class PlayerInput : MonoBehaviour
         transform.position += (dir * moveSpeed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            moveSpeed *= 3f;
+            moveSpeed *= 2f;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed /= 3f;
+            moveSpeed /= 2f;
         }
     }
 

@@ -732,6 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93433de1a2437e438d0fe013fa1c42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentScene: 0
   TurnIndex: 0
 --- !u!4 &731920553
 Transform:
@@ -2488,6 +2489,10 @@ PrefabInstance:
     - target: {fileID: 3594443375589357917, guid: 3a6bc9ef9d44d64459ba630792ad6562, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074560168552999701, guid: 3a6bc9ef9d44d64459ba630792ad6562, type: 3}
+      propertyPath: m_Pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a6bc9ef9d44d64459ba630792ad6562, type: 3}

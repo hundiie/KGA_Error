@@ -10,18 +10,18 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void Awake()
     {
-        CurrentScene = 0;
+        CurrentScene = 9;
         TurnIndex = 0;
-        ChangeScene();
     }
-    public void ChangeScene()
+    public void UpdateScene()
     {
+        AudioController.Instance.AudioStop();
         TurnIndex = 0;
         //if (UIController.Instance.FadePannel != null)
         //{
         //    UIController.Instance.StartCoroutine("FadeInStart");
         //}
-        AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(0), 0.1f);
+        AudioController.Instance.AudioPlay(0);
         SceneManager.LoadScene(CurrentScene);
     }
 }

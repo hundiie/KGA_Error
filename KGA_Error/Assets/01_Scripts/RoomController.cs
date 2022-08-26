@@ -24,7 +24,11 @@ public class RoomController : MonoBehaviour
         Turn = CSVParser.Instance.GetCsvTurn();
         PlayerInRoom = false;
     }
-    public void RoomTurnChange()
+    private void Update()
+    {
+        RoomTurnUpdate();
+    }
+    public void RoomTurnUpdate()
     {
         if (Turn[GameManager.Instance.TurnIndex] == (int)roomInfo)
         {
@@ -40,9 +44,10 @@ public class RoomController : MonoBehaviour
         if (_other.tag == "Player")
         {
             PlayerInRoom = true;
-            if (roomInfo == RoomInfo.SOUND)
+            if (roomInfo == RoomInfo.SOUND) // »ç¿îµå·ë¿¡ µé¾î°¬À» ¶§
             {
-                AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(2), 0.1f);
+                AudioController.Instance.AudioStop();
+                AudioController.Instance.AudioPlay(2);
             }
 
         }
@@ -51,8 +56,10 @@ public class RoomController : MonoBehaviour
     {
         if (_other.tag == "Player")
         {
+            AudioController.Instance.AudioStop();
+
             PlayerInRoom = false;
-            AudioController.Instance.PlaySound(CSVParser.Instance.GetCsvBGM(0), 0.1f);
+            AudioController.Instance.AudioPlay(0);
         }
     }
 }

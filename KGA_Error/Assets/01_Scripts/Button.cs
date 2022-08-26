@@ -29,7 +29,6 @@ public class Button : MonoBehaviour
     {
         roomController = GetComponentInParent<RoomController>();
         buttonController = GetComponentInParent<ButtonController>();
-        buttonPlayer = GetComponentInParent<AudioSource>();
         buttonAmim = GetComponent<Animator>();
         ButtonTMP = GetComponentInChildren<TextMeshPro>();
     }
@@ -59,13 +58,12 @@ public class Button : MonoBehaviour
     {
         if (IsPush)
         {
-            buttonPlayer.Play(); // 누르는 소리
             StartCoroutine("PushDown");
             float blendSpeed = Time.deltaTime * 1.5f;
             buttonBlend += blendSpeed; // 블랜드값 0 -> 1
         }
 
-        // Player ray관련
+        // 플레이어 주시에 따른 버튼 텍스트 관련
         timer += Time.deltaTime;
         if (timer >= 0.5f)
         {
@@ -91,16 +89,19 @@ public class Button : MonoBehaviour
             IsPush = false; // 애니매이션이 끝나면 눌렸음 상태 변경
             buttonBlend = 0f;
 
+            yield return null;
+            buttonController.ButtonSoundPlay();
+
             yield return new WaitForSeconds(3f);
             if (ButtonState == 0)
             {
-                GameManager.Instance.CurrentScene++; // 씬넘어감
-                GameManager.Instance.ChangeScene();
+                GameManager.Instance.CurrentScene++;
+                GameManager.Instance.UpdateScene();
             }
             else
             {
                 GameManager.Instance.TurnIndex++;
-                roomController.RoomTurnChange();
+                roomController.RoomTurnUpdate();
             }
             StopCoroutine("PushDown");
         }

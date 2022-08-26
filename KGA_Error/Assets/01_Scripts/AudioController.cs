@@ -16,16 +16,18 @@ public class AudioController : SingletonBehaviour<AudioController>
         // 모든 이미지를 리스트에 담는다.
         AudioList = Resources.LoadAll("Audio", typeof(AudioClip)).OfType<AudioClip>().ToList();
 
-        BGMIndex = CSVParser.Instance.GetCsvBGM(0);
         audioSource = GetComponent<AudioSource>();
 
-        audioSource.clip = AudioList[BGMIndex];
-        audioSource.Play();
+        AudioPlay(0);
     }
 
-    public void PlaySound(int index, float Volum )
+    public void AudioPlay(int _index)
     {
-        audioSource.volume = Volum;
-        audioSource.PlayOneShot(AudioList[index]);
+        audioSource.clip = AudioList[CSVParser.Instance.GetCsvBGM(_index)];
+        audioSource.Play();
+    }
+    public void AudioStop()
+    {
+        audioSource.Stop();
     }
 }
