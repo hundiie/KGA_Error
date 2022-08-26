@@ -57,6 +57,7 @@ public class CSVParser : SingletonBehaviour<CSVParser>
             }
         }
     }
+
     private DataTable GetCsvData(int _index) // 인덱스로 원하는 데이터를 찾는다.
     {
         return dataTable[_index];
@@ -67,38 +68,45 @@ public class CSVParser : SingletonBehaviour<CSVParser>
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).Script;
     }
+
     public string GetCsvDoorName(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).DoorName;
     }
+
     public string GetCsvOneButton(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).OneButton;
     }
+
     public string GetCsvTwoButton_L(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).TwoButton_L;
     }
+
     public string GetCsvTwoButton_R(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         return GetCsvData(_index).TwoButton_R;
     }
+
     public int GetCsvImage(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         int imageIndex = Int32.Parse(GetCsvData(_index).Image);
         return imageIndex;
     }
+
     public int GetCsvBGM(int _number)
     {
         int _index = GameManager.Instance.CurrentScene * 1000 + _number;
         int audioIndex = Int32.Parse(GetCsvData(_index).BGM);
         return audioIndex;
     }
+
     public int[] GetCsvTurn()
     {
         int _index = GameManager.Instance.CurrentScene * 1000;

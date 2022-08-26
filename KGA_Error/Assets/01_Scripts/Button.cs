@@ -14,16 +14,19 @@ public class Button : MonoBehaviour
 
     public bool IsPush = false; // 눌렸는지 체크
 
+    // 외부 스크립트
     private RoomController roomController;
     private ButtonController buttonController;
-    private AudioSource buttonPlayer;   // 버튼 누르면 나는 소리
 
+    // 애니메이션
     private Animator buttonAmim;    // 버튼 누르는 애니메이션
-    private string ButtonText;      // CSV에서 가져오는 텍스트
-    private TextMeshPro ButtonTMP;  // 버튼 바로 위에 뜨는 텍스트
-
     private float buttonBlend;      // 애니메이션 블랜드값
-    private float timer;
+    
+    // 버튼 텍스트
+    private TextMeshPro ButtonTMP;  // 버튼 바로 위에 뜨는 텍스트
+    private string ButtonText;      // CSV에서 가져오는 텍스트
+
+    private float timer;    // 플레이어 주시 관련
 
     private void Awake()
     {
@@ -106,6 +109,7 @@ public class Button : MonoBehaviour
             StopCoroutine("PushDown");
         }
     }
+
     public void ButtonTextEnable()
     {
         ButtonTMP.enabled = true;

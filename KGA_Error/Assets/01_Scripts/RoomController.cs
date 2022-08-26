@@ -46,7 +46,6 @@ public class RoomController : MonoBehaviour
             PlayerInRoom = true;
             if (roomInfo == RoomInfo.SOUND) // »ç¿îµå·ë¿¡ µé¾î°¬À» ¶§
             {
-                AudioController.Instance.AudioStop();
                 AudioController.Instance.AudioPlay(2);
             }
 
@@ -54,10 +53,8 @@ public class RoomController : MonoBehaviour
     }
     void OnTriggerExit(Collider _other)
     {
-        if (_other.tag == "Player")
+        if (_other.tag == "Player" && GameManager.Instance.CurrentScene!=9)
         {
-            AudioController.Instance.AudioStop();
-
             PlayerInRoom = false;
             AudioController.Instance.AudioPlay(0);
         }

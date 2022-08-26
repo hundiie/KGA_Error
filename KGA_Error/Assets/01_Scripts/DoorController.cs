@@ -5,36 +5,39 @@ using TMPro;
 
 public class DoorController : MonoBehaviour
 {
+    // 외부 스크립트
     private RoomController roomController;
 
-    private TextMeshPro doorTMP;
-    private string doorText;
-
+    // 애니메이션
     private Animator doorAnim;  // 문열리는 애니메이션
     private float doorAnimBlend;
-
+    private bool animFinish;
     private bool isFindPlayer;
     private bool doorLock;
-    private bool animFinish;
+    
+    // 도어 텍스트
+    private TextMeshPro doorTMP;
+    private string doorText;
 
     private void Awake()
     {
         roomController = GetComponentInParent<RoomController>();
-        doorTMP = GetComponentInChildren<TextMeshPro>();
         doorAnim = GetComponentInChildren<Animator>();
+        doorTMP = GetComponentInChildren<TextMeshPro>();
     }
 
     private void Start()
     {
+        isFindPlayer = false;
+
         doorText = CSVParser.Instance.GetCsvDoorName((int)roomController.roomInfo);
         doorTMP.text = doorText;
-
-        isFindPlayer = false;
         doorTMP.enabled = false;
     }
 
     private void Update()
     {
+        // 플레이어가 방에 없고 내 턴도 아니고 애니메이션도 끝나있다면 문은 잠겨있음.
         if(!roomController.PlayerInRoom && !roomController.MyRoomTurn && animFinish)
         {
             doorLock = true;
@@ -48,7 +51,6 @@ public class DoorController : MonoBehaviour
 
         if (!doorLock)
         {
-
             if (isFindPlayer)
             {
                 DoorOpen();

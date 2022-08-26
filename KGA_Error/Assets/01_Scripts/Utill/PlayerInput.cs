@@ -8,7 +8,6 @@ public class PlayerInput : MonoBehaviour
 
     public float turnSpeed = 2.5f; // 마우스 회전 속도
     public float moveSpeed = 3f; // 이동 속도
-                                 // public bool IsPush = false;
     public Transform CameraTransform;
 
     void Update()

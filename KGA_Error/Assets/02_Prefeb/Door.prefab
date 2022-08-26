@@ -236,7 +236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4572660008446762800, guid: cbbd775626dcfee4f83ff34c785a426a, type: 2}
+  - {fileID: 4496879214096137702, guid: e53d72d6d07253c48b4dddb813651848, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -280,8 +280,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Door
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cbbd775626dcfee4f83ff34c785a426a, type: 2}
-  m_sharedMaterial: {fileID: 4572660008446762800, guid: cbbd775626dcfee4f83ff34c785a426a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e53d72d6d07253c48b4dddb813651848, type: 2}
+  m_sharedMaterial: {fileID: 4496879214096137702, guid: e53d72d6d07253c48b4dddb813651848, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4572660008446762800, guid: 435fe72cb1082cd45a5df0a4742fa063, type: 2}
+  - {fileID: 4496879214096137702, guid: 189283dcde0e8104ab641127c86adbe7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,8 +102,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Checking...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 435fe72cb1082cd45a5df0a4742fa063, type: 2}
-  m_sharedMaterial: {fileID: 4572660008446762800, guid: 435fe72cb1082cd45a5df0a4742fa063, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 189283dcde0e8104ab641127c86adbe7, type: 2}
+  m_sharedMaterial: {fileID: 4496879214096137702, guid: 189283dcde0e8104ab641127c86adbe7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -221,8 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fdfa45926a8ea4da61e5ce317d6357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomInfo: 4
+  doNotPush: 0
   checkingText: {fileID: 8373779501505024960}
+  AudioList: []
 --- !u!82 &4380209360378778792
 AudioSource:
   m_ObjectHideFlags: 0
@@ -458,6 +459,18 @@ PrefabInstance:
       propertyPath: checkingText
       value: 
       objectReference: {fileID: 8373779501505024960}
+    - target: {fileID: 6926027023294150802, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7917647948016154820, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7917647948016154820, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8290965396088779487, guid: 2c7bc504321f6ef47a740ca408915e04, type: 3}
       propertyPath: m_RootOrder
       value: 1
