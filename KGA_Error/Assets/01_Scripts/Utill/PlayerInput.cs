@@ -62,7 +62,7 @@ public class PlayerInput : MonoBehaviour
     void Raycast()
     {
         RaycastHit hit; // 충돌정보
-        float maxDistance = 25f; // 검사 최대 거리
+        float maxDistance = 50f; // 검사 최대 거리
 
         if (Physics.Raycast(CameraTransform.position, CameraTransform.forward, out hit, maxDistance))
         {

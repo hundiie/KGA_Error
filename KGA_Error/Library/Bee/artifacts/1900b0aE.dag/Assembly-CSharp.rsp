@@ -403,7 +403,7 @@
 "Assets/01_Scripts/Buttonss.cs"
 "Assets/01_Scripts/DoorController.cs"
 "Assets/01_Scripts/ImageController.cs"
-"Assets/01_Scripts/NewBehaviourScript.cs"
+"Assets/01_Scripts/LayserPointer.cs"
 "Assets/01_Scripts/QuitControl.cs"
 "Assets/01_Scripts/RoomController.cs"
 "Assets/01_Scripts/ScriptController.cs"
